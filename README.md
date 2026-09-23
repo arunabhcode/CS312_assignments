@@ -345,7 +345,14 @@ Normal Modal training uses two Modal Volumes:
 - your writable per-environment storage at `/root/data`
 
 The default training data is already prepared by the instructors in the shared
-data Volume. Students do not need to download or preprocess it for normal runs.
+data Volume.
+
+Note: Students should NOT modify any aspect of the shared environment by 
+modifying the data or uploading their own volumes. This data is shared between
+all students and should remain consistent. Students do not need to download
+or preprocess it for normal runs.
+
+
 
 Training outputs, checkpoints, and custom datasets live in your writable
 `/root/data` Volume. They persist after a Modal job finishes.
