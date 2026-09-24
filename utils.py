@@ -15,8 +15,8 @@ from model_config import validate_precision
 REPO_ROOT = Path(__file__).resolve().parent
 
 # Student-facing configuration. Most students only edit these three lines.
-CONFIG_MODAL_ENVIRONMENT = "YOUR_MODAL_ENVIRONMENT"
-CONFIG_WANDB_ENTITY = "YOUR_WANDB_USERNAME_OR_TEAM"
+CONFIG_MODAL_ENVIRONMENT = "cs312-arunabh"
+CONFIG_WANDB_ENTITY = "vrshy-stanford"
 CONFIG_WANDB_PROJECT = "assignments"
 
 # Non-Modal users only: advanced local path overrides.
@@ -299,7 +299,9 @@ def precision_config(precision):
         "param_precision": "bf16" if precision == "bf16" else "fp32",
         "compute_precision": "fp32" if precision == "fp32" else "bf16",
         "loss_precision": "fp32",
-        "optimizer_state_precision": "optimizer_default" if precision == "bf16" else "fp32",
+        "optimizer_state_precision": "optimizer_default"
+        if precision == "bf16"
+        else "fp32",
         "uses_autocast": precision == "mp",
     }
 
